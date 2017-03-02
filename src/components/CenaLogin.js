@@ -1,21 +1,27 @@
 import React, { Component } from 'react';
-import { View, Image, Text, StyleSheet, TouchableHighlight, Button, TextInput } from 'react-native';
+import { View, Image, Text, StyleSheet, TouchableHighlight, Button, TextInput, ScrollView } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 
-const imgRandom = require('../imgs/olocobicho.jpg');
+const imgName = require('../imgs/ico-men.png');
+const imgEmail = require('../imgs/ico-mail.png');
+const imgCPF = require('../imgs/ico-cpf.png');
+const imgPassword = require('../imgs/ico-pass.png');
 const imgLogo = require('../imgs/logo.png');
+const imgBackground = require('../imgs/bg.jpg');
 
 export default class CenaLogin extends Component {
   render() {
     return (
-      <View style={styles.principal}>
+      <ScrollView style={styles.principal}>
+      <Image style={{height: 570, width: 365}} source= {imgBackground}>
       <View style={{alignItems:'center', justifyContent:'center', flex: 3}}>
-        <Image source={imgLogo} />
+        <Image style={{height: 40, width: 200}} source={imgLogo} />
       </View>
+      
         <View style={styles.criarConta}>
           <View style={{paddingBottom: 30}}>
             <View style={styles.formCampos}>
-              <Image style={styles.randomIcon} source={imgRandom}
+              <Image style={{width: 15, height: 17}} source={imgName}
               />
               <TextInput
               style={styles.formText}
@@ -25,7 +31,7 @@ export default class CenaLogin extends Component {
             />
             </View>
              <View style={styles.formCampos}>
-              <Image style={styles.randomIcon} source={imgRandom}
+              <Image style={{width: 19, height: 15}} source={imgEmail}
               />
               <TextInput
              style={styles.formText}
@@ -35,7 +41,7 @@ export default class CenaLogin extends Component {
             />
             </View>
              <View style={styles.formCampos}>
-              <Image style={styles.randomIcon} source={imgRandom}
+              <Image style={{width: 15, height: 15}} source={imgCPF}
               />
               <TextInput
               style={styles.formText}
@@ -45,7 +51,7 @@ export default class CenaLogin extends Component {
             />
             </View>
              <View style={styles.formCampos}>
-              <Image style={styles.randomIcon} source={imgRandom}
+              <Image style={{width: 14, height: 15}} source={imgPassword}
               />
               <TextInput
              style={styles.formText}
@@ -55,7 +61,7 @@ export default class CenaLogin extends Component {
             />
             </View>
              <View style={styles.formCampos}>
-              <Image style={styles.randomIcon} source={imgRandom}
+              <Image style={{width: 14, height: 15}} source={imgPassword}
               />
               <TextInput
               style={styles.formText}
@@ -71,8 +77,9 @@ export default class CenaLogin extends Component {
                 <Text style={styles.txtCriarConta}>CRIAR CONTA</Text>
             </TouchableHighlight>
           </View>
-         
+        
         </View>
+       
         <View style={styles.login}>
         <Text style={{color:'gray', marginBottom: 10, fontSize: 12}}>Já é cadastrado?</Text>
           <TouchableHighlight style={styles.btnLogin}
@@ -80,7 +87,8 @@ export default class CenaLogin extends Component {
               <Text style={styles.txtEntreJa}>ENTRE JÁ</Text>
           </TouchableHighlight>
         </View>
-      </View>
+         </Image>
+      </ScrollView>
     );
   }
 }
@@ -88,19 +96,19 @@ export default class CenaLogin extends Component {
 const styles = StyleSheet.create({
   principal: {
     flex: 1,
-    backgroundColor: '#000'
+    backgroundColor: 'transparent'
   },
   login:{
     alignItems: 'center',
     justifyContent: 'center',
     flex: 3,
-    backgroundColor: '#000'
+    backgroundColor: 'transparent'
   },
  criarConta:{
   alignItems: 'center',
   justifyContent: 'center',
   flex: 6,
-  backgroundColor: '#000',
+  backgroundColor: 'transparent',
   justifyContent: 'flex-end',
   paddingBottom: 10
 
@@ -128,10 +136,6 @@ formCampos: {
   borderBottomWidth: 1,
   borderColor: 'gray'
 },
-randomIcon: {
-  width: 20,
-  height: 20,
- },
  formText: {
   color: 'white',
   height: 40, 
