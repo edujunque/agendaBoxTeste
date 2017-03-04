@@ -41,8 +41,8 @@ export default class CenaTimeLine extends Component {
 
         </View>
         <View>
-          <TouchableHighlight
-              onPress={() => {Actions.eventodetalhes(); }}>
+          <TouchableHighlight 
+              onPress={() => {Actions.eventodetalhes({evID: eventos.evID})}}>
                <Image styleName="large-banner" source={{ uri: eventos.evFotoBanner }}></Image>
           </TouchableHighlight>
          

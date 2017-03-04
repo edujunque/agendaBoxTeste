@@ -11,11 +11,23 @@ import Filtro from './Filtro'
 const imgLogo = require('../imgs/logo.png');
 const imgTemp = require('../imgs/olocobicho.jpg');
 
-
 export default class CenaEventoDetalhes extends Component {
- 
+  constructor(props){
+    super(props);
+
+  }
+  
   getEventos() {
     return require('../../assets/agendabox-2a212-export.json');
+  }
+
+  coiso() {
+  var eventoTeste =  this.getEventos().filter((evento) => evento.evID == this.props.evID);
+  alert(eventoTeste[0].evID);
+  }
+
+  componentWillMount() {
+    this.coiso();
   }
 
   render() {
@@ -28,7 +40,7 @@ export default class CenaEventoDetalhes extends Component {
         <View style={styles.conteudo}>
           <ScrollView>
             <View style={{height:1500, flex: 1, backgroundColor: 'lightblue'}}>
-              <View style={styles.imagemBanner}><Text>Imagem banner</Text></View>
+              <View style={styles.imagemBanner}><Text>Imagem banner :{this.props.evID}</Text></View>
               <View style={styles.nomeEvento}><Text>nome evento</Text><Text>local evento</Text></View>
               <View style={styles.botoesInterecao}><Text>imkagens de dias curtidas fotos share</Text></View>
               <View style={styles.dataEvento}><Text>data evento</Text></View>

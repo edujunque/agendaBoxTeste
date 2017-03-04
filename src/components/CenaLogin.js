@@ -12,59 +12,66 @@ const imgBackground = require('../imgs/bg.jpg');
 export default class CenaLogin extends Component {
   render() {
     return (
+      
+      
+      <Image style={{flex: 1, height: null, width: null, resizeMode: 'cover'}} source= {imgBackground}>
       <ScrollView style={styles.principal}>
-      <Image style={{height: 570, width: 365}} source= {imgBackground}>
-      <View style={{alignItems:'center', justifyContent:'center', flex: 3}}>
+      <View style={{alignItems:'center', justifyContent:'center', flex: 3, paddingTop: 40, paddingBottom: 40}}>
         <Image style={{height: 40, width: 200}} source={imgLogo} />
       </View>
       
         <View style={styles.criarConta}>
           <View style={{paddingBottom: 30}}>
             <View style={styles.formCampos}>
-              <Image style={{width: 15, height: 17}} source={imgName}
+              <Image style={{width: 15, height: 17, marginLeft: 5}} source={imgName}
               />
               <TextInput
               style={styles.formText}
+              underlineColorAndroid='rgba(0,0,0,0)'
               placeholder="Nome"
               placeholderTextColor='white'
               onChangeText={(text) => this.setState({text})}
             />
             </View>
              <View style={styles.formCampos}>
-              <Image style={{width: 19, height: 15}} source={imgEmail}
+              <Image style={{width: 19, height: 15, marginLeft: 5}} source={imgEmail}
               />
               <TextInput
              style={styles.formText}
+             underlineColorAndroid='rgba(0,0,0,0)'
               placeholder="E-mail"
               placeholderTextColor='white'
               onChangeText={(text) => this.setState({text})}
             />
             </View>
              <View style={styles.formCampos}>
-              <Image style={{width: 15, height: 15}} source={imgCPF}
+              <Image style={{width: 15, height: 15, marginLeft: 5}} source={imgCPF}
               />
               <TextInput
               style={styles.formText}
+              underlineColorAndroid='rgba(0,0,0,0)'
               placeholder="CPF"
               placeholderTextColor='white'
               onChangeText={(text) => this.setState({text})}
             />
             </View>
              <View style={styles.formCampos}>
-              <Image style={{width: 14, height: 15}} source={imgPassword}
+              <Image style={{width: 14, height: 15, marginLeft: 5}} source={imgPassword}
               />
               <TextInput
              style={styles.formText}
+             underlineColorAndroid='rgba(0,0,0,0)'
               placeholder="Senha"
               placeholderTextColor='white'
               onChangeText={(text) => this.setState({text})}
             />
             </View>
              <View style={styles.formCampos}>
-              <Image style={{width: 14, height: 15}} source={imgPassword}
+              <Image style={{width: 14, height: 15, marginLeft: 5}} source={imgPassword}
               />
               <TextInput
               style={styles.formText}
+              underlineColorAndroid='rgba(0,0,0,0)'
               placeholder="Confirme a Senha"
               placeholderTextColor='white'
               onChangeText={(text) => this.setState({text})}
@@ -87,16 +94,16 @@ export default class CenaLogin extends Component {
               <Text style={styles.txtEntreJa}>ENTRE JÁ</Text>
           </TouchableHighlight>
         </View>
+        </ScrollView>
          </Image>
-      </ScrollView>
     );
   }
 }
 
 const styles = StyleSheet.create({
   principal: {
-    flex: 1,
-    backgroundColor: 'transparent'
+    backgroundColor: 'transparent',
+    borderWidth: 2, borderColor: 'yellow', flex: 1
   },
   login:{
     alignItems: 'center',
@@ -140,7 +147,7 @@ formCampos: {
   color: 'white',
   height: 40, 
   width: 300,
-  paddingLeft: 10
+  paddingLeft: 10,
  },
   btnLogin: {
   backgroundColor: 'transparent',
