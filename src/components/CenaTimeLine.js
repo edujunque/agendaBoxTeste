@@ -48,7 +48,7 @@ export default class CenaTimeLine extends Component {
          
           
             <Tile style={{backgroundColor: '#303030', flexDirection: 'row'}}>
-              <View style={{alignItems: 'center', justifyContent: 'center', flex : 2}}>
+              <View style={{alignItems: 'center', justifyContent: 'center', flex : 2, paddingTop: 5}}>
                 <Text style={{fontSize: 26, color:'#737373', fontWeight: 'bold'}}>20</Text>
                 <Text style={{fontSize: 9, color:'#737373', fontWeight: 'bold'}}>MAR/
                   <Text style={{fontSize: 9, color:'#737373', fontWeight: 'normal'}}>17</Text>
@@ -64,10 +64,10 @@ export default class CenaTimeLine extends Component {
             </Tile>
           <View style={{flexDirection: 'row', borderTopWidth: 0.2, borderColor: 'white', margin: 10}}>
             <View style={{ flex: 1, marginTop: 10}}>
-              <Text style={{color:'white', paddingTop: 5}}>R$ {eventos.eventoPrecos.Pista} a </Text>
+              <Text style={{color:'white', paddingTop: 5}}>R$ {eventos.eventoPrecos[0].Valor} a </Text>
             </View>
             <View style={{ flex: 2, alignItems: 'flex-start', marginTop: 10}}>
-              <Text style={{color:'white', paddingTop: 5}}>R$ {eventos.eventoPrecos.camarote}</Text>
+              <Text style={{color:'white', paddingTop: 5}}>R$ {eventos.eventoPrecos[2].Valor}</Text>
             </View>
             <View style={{flex: 2, alignItems: 'flex-end'}}>
                <TouchableHighlight style={styles.btnComprar}

@@ -7,20 +7,49 @@
   "evHorarioFim": "04:00",
   "evHorarioInicio": "23:00",
   "evLocal": "Casa rapel divino",
-  "evNome": "Evento principal",
+  "evNome": "Balada sertaneja Especial - Open Churrasco",
   "evID": 1,
-  "evOrganizador": "Atlética de Comunicação PUC-SP",
-  "eventoFotos": {
-    "1": "http://www.alegriaestanoar.com.br/wp-content/uploads/2016/11/balada.jpg",
-    "2": "http://www.alegriaestanoar.com.br/wp-content/uploads/2016/11/balada.jpg",
-    "3": "http://www.alegriaestanoar.com.br/wp-content/uploads/2016/11/balada.jpg"
-  },
-  "eventoPrecos": {
-    "Pista": "80,00",
-    "Arquibancada": "100,99",
-    "camarote": "150,00"
-  }
-
+  "evOrganizador": "Atlética PUC-RJ",
+  "evDescricao": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi lacus urna, volutpat eu sem ullamcorper, dignissim convallis nulla. Vestibulum id odio lorem. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla sapien dolor, molestie sed efficitur sit amet, iaculis ac arcu. Aliquam erat volutpat. Ut mattis augue quis metus pharetra, vel placerat massa luctus. Donec id nulla ipsum. Maecenas consectetur, metus ut tempus pulvinar, nulla urna luctus nunc, vel efficitur purus mi id lorem. Sed viverra tellus lacus, id volutpat quam dictum suscipit.",
+   "eventoFotos": [
+    {
+      "photo": "http://www.alegriaestanoar.com.br/wp-content/uploads/2016/11/balada.jpg"
+    },
+    {
+    "photo": "http://drinksshowfranca.com.br/boate/wp-content/uploads/2016/05/2016-05-24-PHOTO-00000177.jpg"
+    },
+    {
+    "photo": "http://www.stag-bratislava.com/images/katakt/Ice%20Hockey%20Spectators%202.jpg"
+    },
+    {
+    "photo": "https://s-media-cache-ak0.pinimg.com/originals/6e/ab/46/6eab46d73353ff17955d7e8470faeff1.jpg"
+    },
+    {
+    "photo": "http://www.alegriaestanoar.com.br/wp-content/uploads/2016/11/balada.jpg"
+    },
+    {
+    "photo": "https://a.cdn.miamimusicweek.com/production/venue/173/image/Icon.jpg"
+    },
+    {
+    "photo": "http://djoybeat.com/wp-content/uploads/2012/11/Screen-shot-2012-10-03-at-6.13.07-PM.png"
+    },
+    {
+    "photo": "https://s-media-cache-ak0.pinimg.com/originals/0a/42/3c/0a423c6b9e62d57c78101f6a95ee3639.jpg"
+    }
+  ],
+   "eventoPrecos": [{
+          "Tipo" : "Pista", 
+          "Valor" : "80,00"
+        }, 
+        {
+          "Tipo" : "Arquibancada", 
+          "Valor" : "100,99"
+        }, 
+        {
+          "Tipo" : "Camarote", 
+          "Valor" : "159,99"
+        }        
+      ]
 },
   {
     "evCurtidas": 10,
@@ -28,22 +57,52 @@
     "evDataPublicacao": "28/02/2017 23:35:00",
     "evEndereco": "Rua 1 2 3 de oliveira 4, 252, cambui, campinas, SP",
     "evFotoBanner": "https://www.altoastral.com.br/wp-content/uploads/2016/10/faustao.jpg",
-    "evHorarioFim": "04:00",
-    "evHorarioInicio": "23:00",
-    "evLocal": "Casa rapel divino",
+    "evHorarioFim": "01:00",
+    "evHorarioInicio": "19:00",
+    "evLocal": "Galpão mendonho ja fui",
     "evNome": "Evento gultural",
     "evID": 2,
-    "evOrganizador": "Atlética de Comunicação PUC-SP",
-    "eventoFotos": {
-      "1": "http://www.alegriaestanoar.com.br/wp-content/uploads/2016/11/balada.jpg",
-      "2": "http://www.alegriaestanoar.com.br/wp-content/uploads/2016/11/balada.jpg",
-      "3": "http://www.alegriaestanoar.com.br/wp-content/uploads/2016/11/balada.jpg"
+    "evOrganizador": "Suspeito festas",
+    "evDescricao": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi lacus urna, volutpat eu sem ullamcorper, dignissim convallis nulla. Vestibulum id odio lorem. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla sapien dolor, molestie sed efficitur sit amet, iaculis ac arcu. Aliquam erat volutpat. Ut mattis augue quis metus pharetra, vel placerat massa luctus. Donec id nulla ipsum. Maecenas consectetur, metus ut tempus pulvinar, nulla urna luctus nunc, vel efficitur purus mi id lorem. Sed viverra tellus lacus, id volutpat quam dictum suscipit.",
+     "eventoFotos": [
+    {
+      "photo": "http://www.alegriaestanoar.com.br/wp-content/uploads/2016/11/balada.jpg"
     },
-    "eventoPrecos": {
-    "Pista": "80,00",
-    "Arquibancada": "100,99",
-    "camarote": "150,00"
+    {
+    "photo": "http://drinksshowfranca.com.br/boate/wp-content/uploads/2016/05/2016-05-24-PHOTO-00000177.jpg"
+    },
+    {
+    "photo": "http://www.stag-bratislava.com/images/katakt/Ice%20Hockey%20Spectators%202.jpg"
+    },
+    {
+    "photo": "https://s-media-cache-ak0.pinimg.com/originals/6e/ab/46/6eab46d73353ff17955d7e8470faeff1.jpg"
+    },
+    {
+    "photo": "https://s-media-cache-ak0.pinimg.com/originals/0a/42/3c/0a423c6b9e62d57c78101f6a95ee3639.jpg"
+    },
+    {
+    "photo": "http://djoybeat.com/wp-content/uploads/2012/11/Screen-shot-2012-10-03-at-6.13.07-PM.png"
+    },
+    {
+    "photo": "https://a.cdn.miamimusicweek.com/production/venue/173/image/Icon.jpg"
+    },
+    {
+    "photo": "http://www.alegriaestanoar.com.br/wp-content/uploads/2016/11/balada.jpg"
     }
+  ],
+   "eventoPrecos": [{
+          "Tipo" : "Pista", 
+          "Valor" : "80,00"
+        }, 
+        {
+          "Tipo" : "Arquibancada", 
+          "Valor" : "100,99"
+        }, 
+        {
+          "Tipo" : "Camarote", 
+          "Valor" : "159,99"
+        }        
+      ]
   },
   {
     "evCurtidas": 10,
@@ -57,16 +116,46 @@
     "evNome": "Evento do marsupial 123 123 123 123 123",
     "evID": 3,
     "evOrganizador": "Atlética de Comunicação PUC-SP",
-    "eventoFotos": {
-      "1": "http://www.alegriaestanoar.com.br/wp-content/uploads/2016/11/balada.jpg",
-      "2": "http://www.alegriaestanoar.com.br/wp-content/uploads/2016/11/balada.jpg",
-      "3": "http://www.alegriaestanoar.com.br/wp-content/uploads/2016/11/balada.jpg"
+    "evDescricao": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi lacus urna, volutpat eu sem ullamcorper, dignissim convallis nulla. Vestibulum id odio lorem. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla sapien dolor, molestie sed efficitur sit amet, iaculis ac arcu. Aliquam erat volutpat. Ut mattis augue quis metus pharetra, vel placerat massa luctus. Donec id nulla ipsum. Maecenas consectetur, metus ut tempus pulvinar, nulla urna luctus nunc, vel efficitur purus mi id lorem. Sed viverra tellus lacus, id volutpat quam dictum suscipit.",
+     "eventoFotos": [
+    {
+      "photo": "http://www.alegriaestanoar.com.br/wp-content/uploads/2016/11/balada.jpg"
     },
-    "eventoPrecos": {
-    "Pista": "80,00",
-    "Arquibancada": "100,99",
-    "camarote": "150,00"
+    {
+    "photo": "http://drinksshowfranca.com.br/boate/wp-content/uploads/2016/05/2016-05-24-PHOTO-00000177.jpg"
+    },
+    {
+    "photo": "http://www.stag-bratislava.com/images/katakt/Ice%20Hockey%20Spectators%202.jpg"
+    },
+    {
+    "photo": "https://s-media-cache-ak0.pinimg.com/originals/6e/ab/46/6eab46d73353ff17955d7e8470faeff1.jpg"
+    },
+    {
+    "photo": "https://s-media-cache-ak0.pinimg.com/originals/0a/42/3c/0a423c6b9e62d57c78101f6a95ee3639.jpg"
+    },
+    {
+    "photo": "http://djoybeat.com/wp-content/uploads/2012/11/Screen-shot-2012-10-03-at-6.13.07-PM.png"
+    },
+    {
+    "photo": "https://a.cdn.miamimusicweek.com/production/venue/173/image/Icon.jpg"
+    },
+    {
+    "photo": "http://www.alegriaestanoar.com.br/wp-content/uploads/2016/11/balada.jpg"
     }
+  ],
+   "eventoPrecos": [{
+          "Tipo" : "Pista", 
+          "Valor" : "80,00"
+        }, 
+        {
+          "Tipo" : "Arquibancada", 
+          "Valor" : "100,99"
+        }, 
+        {
+          "Tipo" : "Camarote", 
+          "Valor" : "159,99"
+        }        
+      ]
   },
   {
     "evCurtidas": 10,
@@ -80,16 +169,46 @@
     "evNome": "Samba da perifa",
     "evID": 4,
     "evOrganizador": "Atlética de Comunicação PUC-SP",
-    "eventoFotos": {
-      "1": "http://www.alegriaestanoar.com.br/wp-content/uploads/2016/11/balada.jpg",
-      "2": "http://www.alegriaestanoar.com.br/wp-content/uploads/2016/11/balada.jpg",
-      "3": "http://www.alegriaestanoar.com.br/wp-content/uploads/2016/11/balada.jpg"
+    "evDescricao": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi lacus urna, volutpat eu sem ullamcorper, dignissim convallis nulla. Vestibulum id odio lorem. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla sapien dolor, molestie sed efficitur sit amet, iaculis ac arcu. Aliquam erat volutpat. Ut mattis augue quis metus pharetra, vel placerat massa luctus. Donec id nulla ipsum. Maecenas consectetur, metus ut tempus pulvinar, nulla urna luctus nunc, vel efficitur purus mi id lorem. Sed viverra tellus lacus, id volutpat quam dictum suscipit.",
+     "eventoFotos": [
+      {
+      "photo": "http://www.alegriaestanoar.com.br/wp-content/uploads/2016/11/balada.jpg"
     },
-    "eventoPrecos": {
-    "Pista": "80,00",
-    "Arquibancada": "100,99",
-    "camarote": "150,00"
+    {
+    "photo": "http://drinksshowfranca.com.br/boate/wp-content/uploads/2016/05/2016-05-24-PHOTO-00000177.jpg"
+    },
+    {
+    "photo": "http://www.stag-bratislava.com/images/katakt/Ice%20Hockey%20Spectators%202.jpg"
+    },
+    {
+    "photo": "https://s-media-cache-ak0.pinimg.com/originals/6e/ab/46/6eab46d73353ff17955d7e8470faeff1.jpg"
+    },
+    {
+    "photo": "https://s-media-cache-ak0.pinimg.com/originals/0a/42/3c/0a423c6b9e62d57c78101f6a95ee3639.jpg"
+    },
+    {
+    "photo": "http://djoybeat.com/wp-content/uploads/2012/11/Screen-shot-2012-10-03-at-6.13.07-PM.png"
+    },
+    {
+    "photo": "https://a.cdn.miamimusicweek.com/production/venue/173/image/Icon.jpg"
+    },
+    {
+    "photo": "http://www.alegriaestanoar.com.br/wp-content/uploads/2016/11/balada.jpg"
     }
+  ],
+   "eventoPrecos": [{
+          "Tipo" : "Pista", 
+          "Valor" : "80,00"
+        }, 
+        {
+          "Tipo" : "Arquibancada", 
+          "Valor" : "100,99"
+        }, 
+        {
+          "Tipo" : "Camarote", 
+          "Valor" : "159,99"
+        }        
+      ]
   },
   {
   "evCurtidas": 10,
@@ -103,15 +222,45 @@
   "evNome": "Pagode dos anos 90",
   "evID": 5,
   "evOrganizador": "Atlética de Comunicação PUC-SP",
-  "eventoFotos": {
-    "1": "http://www.alegriaestanoar.com.br/wp-content/uploads/2016/11/balada.jpg",
-    "2": "http://www.alegriaestanoar.com.br/wp-content/uploads/2016/11/balada.jpg",
-    "3": "http://www.alegriaestanoar.com.br/wp-content/uploads/2016/11/balada.jpg"
-  },
-    "eventoPrecos": {
-    "Pista": "80,00",
-    "Arquibancada": "100,99",
-    "camarote": "150,00"
-  }
+  "evDescricao": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi lacus urna, volutpat eu sem ullamcorper, dignissim convallis nulla. Vestibulum id odio lorem. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla sapien dolor, molestie sed efficitur sit amet, iaculis ac arcu. Aliquam erat volutpat. Ut mattis augue quis metus pharetra, vel placerat massa luctus. Donec id nulla ipsum. Maecenas consectetur, metus ut tempus pulvinar, nulla urna luctus nunc, vel efficitur purus mi id lorem. Sed viverra tellus lacus, id volutpat quam dictum suscipit.",
+  "eventoFotos": [
+   {
+      "photo": "http://www.alegriaestanoar.com.br/wp-content/uploads/2016/11/balada.jpg"
+    },
+    {
+    "photo": "http://drinksshowfranca.com.br/boate/wp-content/uploads/2016/05/2016-05-24-PHOTO-00000177.jpg"
+    },
+    {
+    "photo": "http://www.stag-bratislava.com/images/katakt/Ice%20Hockey%20Spectators%202.jpg"
+    },
+    {
+    "photo": "https://s-media-cache-ak0.pinimg.com/originals/6e/ab/46/6eab46d73353ff17955d7e8470faeff1.jpg"
+    },
+    {
+    "photo": "https://s-media-cache-ak0.pinimg.com/originals/0a/42/3c/0a423c6b9e62d57c78101f6a95ee3639.jpg"
+    },
+    {
+    "photo": "http://djoybeat.com/wp-content/uploads/2012/11/Screen-shot-2012-10-03-at-6.13.07-PM.png"
+    },
+    {
+    "photo": "https://a.cdn.miamimusicweek.com/production/venue/173/image/Icon.jpg"
+    },
+    {
+    "photo": "http://www.alegriaestanoar.com.br/wp-content/uploads/2016/11/balada.jpg"
+    }
+  ],
+  "eventoPrecos": [{
+          "Tipo" : "Pista", 
+          "Valor" : "80,00"
+        }, 
+        {
+          "Tipo" : "Arquibancada", 
+          "Valor" : "100,99"
+        }, 
+        {
+          "Tipo" : "Camarote", 
+          "Valor" : "159,99"
+        }        
+      ]
 }
 ]
