@@ -6,6 +6,8 @@ import { Actions } from 'react-native-router-flux';
 import PhotoBrowser from 'react-native-photo-browser';
 import Rodape from './Rodape'
 import Topo from './Topo'
+import Galeria from './Galeria'
+
 
 export default class CenaEventoGaleria extends Component {
   constructor(props){
@@ -46,16 +48,8 @@ export default class CenaEventoGaleria extends Component {
                   <View>
                     <Text style={{textAlign: 'center', fontSize: 14, color: '#737373'}}>FOTOS</Text>  
                   </View>
-                  <View>
-                     <PhotoBrowser
-                        onBack={navigator.pop}
-                        mediaList={this.state.evento[0].eventoFotos}
-                        startOnGrid={true}
-                        enableGrid={true}
-                        useCircleProgress
-                        onSelectionChanged={this._onSelectionChanged}
-                        onActionButton={this._onActionButton}
-                      />
+                  <View style={{height: 500, marginTop: 15}}>
+                     <Galeria evID={this.state.evento[0].evID}/>
                   </View>
               </View>
             </View>
