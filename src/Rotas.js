@@ -6,6 +6,7 @@ import CenaTimeLine from './components/CenaTimeLine';
 import CenaEventoDetalhes from './components/CenaEventoDetalhes';
 import CenaEventoGaleria from './components/CenaEventoGaleria';
 import Galeria from './components/Galeria';
+import CenaLoginFacebook from './components/CenaLoginFacebook';
 
 
 const Rotas = () => (
@@ -15,6 +16,7 @@ const Rotas = () => (
 	    <Scene hideNavBar={true} key='eventodetalhes' component={CenaEventoDetalhes} title='EventoDetalhes'/>
 	    <Scene hideNavBar={true} key='eventogaleriafotos' component={CenaEventoGaleria} title='EventoGaleria'/>
 	    <Scene hideNavBar={true} key='galeria' component={Galeria} title='Galeria' />
+	    <Scene hideNavBar={true} key='CenaLoginFacebook' component={CenaLoginFacebook} title='CenaLoginFacebook' />
 	    
 	</Router>
 	);

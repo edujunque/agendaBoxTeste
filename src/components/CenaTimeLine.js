@@ -6,6 +6,7 @@ import { Actions } from 'react-native-router-flux';
 import Rodape from './Rodape'
 import Topo from './Topo'
 import Filtro from './Filtro'
+import {firebaseRef, auth} from '../FirebaseConfig'
 
 //import { NavigationBar } from '@shoutem/ui/navigation';
 const imgLogo = require('../imgs/logo.png');
@@ -15,6 +16,26 @@ const imgTemp = require('../imgs/olocobicho.jpg');
 
 export default class CenaTimeLine extends Component {
  
+constructor(props) {
+  super(props);
+  this.state = {eventos : ''}
+}
+
+listarDados(){
+   var eventos = firebaseRef.child('eventos');
+   eventos.on('value', (snapshot) => { 
+      var evento = snapshot.val();
+      this.setState({ eventos : evento});
+      // console.log(this.state.eventos);
+      // console.log(require('../../assets/agendabox-2a212-export.json'));
+    });
+   
+}
+
+ componentDidMount() {
+   this.listarDados();
+ }
+
   getEventos() {
     return require('../../assets/agendabox-2a212-export.json');
   }

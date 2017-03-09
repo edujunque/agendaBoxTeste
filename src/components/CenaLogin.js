@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { View, Image, Text, StyleSheet, TouchableHighlight, Button, TextInput, ScrollView } from 'react-native';
 import { Actions } from 'react-native-router-flux';
+import LoginFacebook from './CenaLoginFacebook'
 
 const imgName = require('../imgs/ico-men.png');
 const imgEmail = require('../imgs/ico-mail.png');
@@ -10,7 +11,7 @@ const imgLogo = require('../imgs/logo.png');
 const imgBackground = require('../imgs/bg.jpg');
 
 export default class CenaLogin extends Component {
-  render() {
+ render() {
     return (
       
       
@@ -93,7 +94,12 @@ export default class CenaLogin extends Component {
               onPress={() => {Actions.timeline(); }}>
               <Text style={styles.txtEntreJa}>ENTRE JÁ</Text>
           </TouchableHighlight>
+         
         </View>
+        <View style={{flex: 1, marginTop: 10, alignItems: 'center',}}>
+          <LoginFacebook style={{}} />  
+        </View>
+        
         </ScrollView>
          </Image>
     );

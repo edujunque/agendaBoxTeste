@@ -15,6 +15,7 @@
     "react-native": "0.41.2",
     "react-native-avatar-gravatar": "0.0.4",
     "react-native-dropdown": "0.0.6",
+    "react-native-facebook-login": "^1.4.0",
     "react-native-linear-gradient": "^2.0.0",
     "react-native-maps": "^0.12.4",
     "react-native-photo-browser": "^0.2.2",
