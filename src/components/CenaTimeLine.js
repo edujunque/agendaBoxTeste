@@ -18,7 +18,7 @@ export default class CenaTimeLine extends Component {
  
 constructor(props) {
   super(props);
-  this.state = {eventos : ''}
+  this.state = {eventos : []}
 }
 
 listarDados(){
@@ -26,19 +26,17 @@ listarDados(){
    eventos.on('value', (snapshot) => { 
       var evento = snapshot.val();
       this.setState({ eventos : evento});
-      // console.log(this.state.eventos);
-      // console.log(require('../../assets/agendabox-2a212-export.json'));
+      //console.log(parsedTodos);
     });
-   
 }
 
- componentDidMount() {
+ componentWillMount() {
    this.listarDados();
  }
 
-  getEventos() {
-    return require('../../assets/agendabox-2a212-export.json');
-  }
+  // getEventos() {
+  //   return require('../../assets/agendabox-2a212-export.json');
+  // }
 
   // defines the UI of each row in the list
   renderRow(eventos) {
@@ -114,7 +112,7 @@ listarDados(){
         </View>
         <Screen style={{flex: 8, backgroundColor: 'black'}}>
           <ListView
-          data={this.getEventos()}
+          data={this.state.eventos}
           renderRow={eventos => this.renderRow(eventos)}
           />
         </Screen>
@@ -122,6 +120,7 @@ listarDados(){
           <Rodape />
         </View>
       </View>
+      
     );
   }
 }

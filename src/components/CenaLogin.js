@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { View, Image, Text, StyleSheet, TouchableHighlight, Button, TextInput, ScrollView } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 import LoginFacebook from './CenaLoginFacebook'
+import CriarConta from './CenaCriarConta'
 
 const imgName = require('../imgs/ico-men.png');
 const imgEmail = require('../imgs/ico-mail.png');
@@ -22,70 +23,7 @@ export default class CenaLogin extends Component {
       </View>
       
         <View style={styles.criarConta}>
-          <View style={{paddingBottom: 30}}>
-            <View style={styles.formCampos}>
-              <Image style={{width: 15, height: 17, marginLeft: 5}} source={imgName}
-              />
-              <TextInput
-              style={styles.formText}
-              underlineColorAndroid='rgba(0,0,0,0)'
-              placeholder="Nome"
-              placeholderTextColor='white'
-              onChangeText={(text) => this.setState({text})}
-            />
-            </View>
-             <View style={styles.formCampos}>
-              <Image style={{width: 19, height: 15, marginLeft: 5}} source={imgEmail}
-              />
-              <TextInput
-             style={styles.formText}
-             underlineColorAndroid='rgba(0,0,0,0)'
-              placeholder="E-mail"
-              placeholderTextColor='white'
-              onChangeText={(text) => this.setState({text})}
-            />
-            </View>
-             <View style={styles.formCampos}>
-              <Image style={{width: 15, height: 15, marginLeft: 5}} source={imgCPF}
-              />
-              <TextInput
-              style={styles.formText}
-              underlineColorAndroid='rgba(0,0,0,0)'
-              placeholder="CPF"
-              placeholderTextColor='white'
-              onChangeText={(text) => this.setState({text})}
-            />
-            </View>
-             <View style={styles.formCampos}>
-              <Image style={{width: 14, height: 15, marginLeft: 5}} source={imgPassword}
-              />
-              <TextInput
-             style={styles.formText}
-             underlineColorAndroid='rgba(0,0,0,0)'
-              placeholder="Senha"
-              placeholderTextColor='white'
-              onChangeText={(text) => this.setState({text})}
-            />
-            </View>
-             <View style={styles.formCampos}>
-              <Image style={{width: 14, height: 15, marginLeft: 5}} source={imgPassword}
-              />
-              <TextInput
-              style={styles.formText}
-              underlineColorAndroid='rgba(0,0,0,0)'
-              placeholder="Confirme a Senha"
-              placeholderTextColor='white'
-              onChangeText={(text) => this.setState({text})}
-            />
-            </View>
-          </View>
-          <View>
-            <TouchableHighlight style={styles.btnCriarConta}
-                onPress={() => {Actions.timeline(); }}>
-                <Text style={styles.txtCriarConta}>CRIAR CONTA</Text>
-            </TouchableHighlight>
-          </View>
-        
+         <CriarConta />
         </View>
        
         <View style={styles.login}>
@@ -118,26 +56,9 @@ const styles = StyleSheet.create({
     backgroundColor: 'transparent'
   },
  criarConta:{
-  alignItems: 'center',
-  justifyContent: 'center',
   flex: 6,
-  backgroundColor: 'transparent',
-  justifyContent: 'flex-end',
   paddingBottom: 10
-
 },
- btnCriarConta: {
-  backgroundColor: '#EE2B7A',
-  width: 300,
-  alignItems: 'center',
-  padding: 13,
-  borderRadius: 30,
-},
-  txtCriarConta: {
-    color: 'white',
-    fontWeight: 'bold',
-    fontSize: 17
-},  
 txtEntreJa: {
     color: 'white',
     fontWeight: 'bold',

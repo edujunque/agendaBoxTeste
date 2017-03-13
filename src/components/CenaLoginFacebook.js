@@ -8,16 +8,6 @@ import {firebaseRef, auth} from '../FirebaseConfig'
 const imgLogo = require('../imgs/logo.png');
 const imgBackground = require('../imgs/bg.jpg');
 
-// var config = {
-//     apiKey: "AIzaSyDloQpo199xsDlwhxCKnbgoHZsW-Qo9t_M",
-//     authDomain: "configuracaofirebasereac-76261.firebaseapp.com",
-//     databaseURL: "https://configuracaofirebasereac-76261.firebaseio.com",
-//     storageBucket: "configuracaofirebasereac-76261.appspot.com",
-//     messagingSenderId: "657271504638"
-//   };
-//   firebase.initializeApp(config);
-
-
 export default class LoginFacebook extends Component {
   constructor(props) {
     super(props);
@@ -25,20 +15,8 @@ export default class LoginFacebook extends Component {
     this.state = {eventos : ''}
   }
  
-  componentWillMount() {
-    // const config = {
-    //   apiKey: "AIzaSyDTUmYoLXinZWDne_4PFMCZpfxWGmShc3E",
-    //   authDomain: "agendabox-2a212.firebaseapp.com",
-    //   databaseURL: "https://agendabox-2a212.firebaseio.com",
-    //   storageBucket: "agendabox-2a212.appspot.com",
-    //   messagingSenderId: "21027443270"
-    // };
-    // firebase.initializeApp(config);
-    //this.listarDados();
-  }
-
   saveFacebookData(data){
-    //console.log(data);
+    console.log(data);
     var email = data.profile.email;
     var senha = String(Date.now);
     
@@ -48,10 +26,13 @@ export default class LoginFacebook extends Component {
       // Update successful.
       //cria usuario na estrutura de relação entre informações da base. (evento X curtidas e evento X Checkin)
        const usuarioAtual = auth.currentUser;
-       console.log(usuarioAtual.uid);
+       //console.log(data);
        firebaseRef.child('user/'+ usuarioAtual.uid).set({
           facebookID : data.profile.id,
-          gender : data.profile.gender
+          gender : data.profile.gender,
+          name : data.profile.first_name + ' ' + data.profile.last_name,
+          linkFB : data.profile.link,
+          cpf : ''
        });
        // firebase.database().ref('user/'+ usuarioAtual.uid + '/eventosCheckin').push().set({
        //    dtCkeckin : String(Date.now),

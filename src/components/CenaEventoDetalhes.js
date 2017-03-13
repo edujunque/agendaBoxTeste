@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { StyleSheet,  Text,  View, Button, TouchableHighlight, ScrollView, Select, Option } from 'react-native';
-import firebase from 'firebase';
+import {firebaseRef, auth} from '../FirebaseConfig'
 import { Image,  ListView,  Tile,  Title,  Subtitle,  Screen} from '@shoutem/ui';
 import { Actions } from 'react-native-router-flux';
 import MapView from 'react-native-maps';
@@ -20,22 +20,26 @@ const imgWomen = require('../imgs/woman-grey.png');
 export default class CenaEventoDetalhes extends Component {
   constructor(props){
     super(props);
-    this.state = { evento : this.getEventos().filter((evento) => evento.evID == this.props.evID)};
+    //this.state = { evento : this.getEventos().filter((evento) => evento.evID == this.props.evID)};
+    this.state = { evento : []};
     
   }
   
-  getEventos() {
-    return require('../../assets/agendabox-2a212-export.json');
+  listarDados(){
+   var eventos = firebaseRef.child('eventos').child(this.props.evID);
+   eventos.on('value', (snapshot) => { 
+      var evento = snapshot.val();
+      this.setState({ evento : evento});
+      console.log(evento);
+    });
   }
 
-  obtemEvento() {
-    // eventoTeste =  
-    //   alert(eventoTeste[0].evID);
-  }
+  // getEventos() {
+  //   return require('../../assets/agendabox-2a212-export.json');
+  // }
 
   componentWillMount() {
-    this.obtemEvento();
-
+    this.listarDados();
   }
 
   // defines the UI of each row in the list
@@ -85,11 +89,11 @@ export default class CenaEventoDetalhes extends Component {
           <ScrollView>
             <View style={{height:1500, flex: 1, backgroundColor: '#1D1D1D'}}>
               <View style={styles.imagemBanner}>
-                <Image styleName="large-banner" source={{ uri: this.state.evento[0].evFotoBanner }}></Image>
+                <Image styleName="large-banner" source={{ uri: this.state.evento.evFotoBanner }}></Image>
               </View>
               <View style={styles.nomeEvento}>
-                <Text style={styles.txtNomeEvento}>{this.state.evento[0].evNome}</Text>
-                <Text style={styles.txtLocalEvento}>{this.state.evento[0].evLocal}</Text>
+                <Text style={styles.txtNomeEvento}>{this.state.evento.evNome}</Text>
+                <Text style={styles.txtLocalEvento}>{this.state.evento.evLocal}</Text>
               </View>
               <View style={styles.botoesInterecao}>
               <View style={{flex: 1, flexDirection: 'row'}}>
@@ -109,7 +113,7 @@ export default class CenaEventoDetalhes extends Component {
                     <Image source={imgLike} style={{width: 35, height: 30, backgroundColor: '#1D1D1D'}}/>
                   </View>
                   <View>
-                    <Text style={[styles.txtCinzaPequeno, {fontWeight: 'bold', paddingTop: 5}]}>{this.state.evento[0].evCurtidas}</Text>
+                    <Text style={[styles.txtCinzaPequeno, {fontWeight: 'bold', paddingTop: 5}]}>{this.state.evento.evCurtidas}</Text>
                   </View>
                   <View>
                     <Text style={styles.txtCinzaPequeno}>CURTIDAS</Text>
@@ -142,14 +146,14 @@ export default class CenaEventoDetalhes extends Component {
               <View style={styles.dataEvento}>
                 <View style={{flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: 'center', margin: 10}}>
                   <View style={{flex:4,  borderRightWidth: 0.5, borderColor: '#737373', marginRight: 15}}>
-                    <Text style={{color: 'white', fontWeight: 'bold', fontSize: 20}}>{this.state.evento[0].evData}</Text>    
+                    <Text style={{color: 'white', fontWeight: 'bold', fontSize: 20}}>{this.state.evento.evData}</Text>    
                   </View>
                   <View style={{flex:1, alignItems: 'center'}}>
                     <Text style={{fontSize: 18, color: 'white'}}>
-                      {this.state.evento[0].evHorarioInicio}
+                      {this.state.evento.evHorarioInicio}
                     </Text>
                     <Text style={[styles.txtCinzaPequeno, {fontSize: 10}]}>
-                      até {this.state.evento[0].evHorarioFim}
+                      até {this.state.evento.evHorarioFim}
                     </Text>    
                   </View>
                 </View>
@@ -158,7 +162,7 @@ export default class CenaEventoDetalhes extends Component {
                 <View style={{flex: 1}}>
                    <View style={{flex: 4, margin: 10}}>
                      <ListView
-                      data={this.state.evento[0].eventoPrecos}
+                      data={this.state.evento.eventoPrecos}
                       renderRow={precos => this.renderRowPrecos(precos)}
                       />
                     </View>
@@ -174,20 +178,20 @@ export default class CenaEventoDetalhes extends Component {
                 <View style={{flex: 1}}>
                   <View style={{flexDirection: 'row', flex: 2}}>
                      <Image style={{flex: 1, borderRadius: 10, margin: 5, backgroundColor: 'transparent'}} 
-                        source={{ uri: this.state.evento[0].eventoFotos[0].photo }}></Image>
+                        source={{ uri: this.state.evento.eventoFotos[0].photo }}></Image>
                      <Image style={{flex: 1, borderRadius: 10, margin: 5, backgroundColor: 'transparent'}} 
-                        source={{ uri: this.state.evento[0].eventoFotos[1].photo }}></Image>
+                        source={{ uri: this.state.evento.eventoFotos[1].photo }}></Image>
                   </View>
                    <View style={{flexDirection: 'row', flex: 1}}>
                      <Image style={{flex: 1, borderRadius: 10, margin: 5, backgroundColor: 'transparent'}} 
-                        source={{ uri: this.state.evento[0].eventoFotos[2].photo }}></Image>
+                        source={{ uri: this.state.evento.eventoFotos[2].photo }}></Image>
                      <Image style={{flex: 1, borderRadius: 10, margin: 5, backgroundColor: 'transparent'}} 
-                        source={{ uri: this.state.evento[0].eventoFotos[3].photo }}></Image>
+                        source={{ uri: this.state.evento.eventoFotos[3].photo }}></Image>
                        
                     <TouchableHighlight style={{flex: 1, margin: 5, borderRadius: 10 }}
-                        onPress={() => {Actions.eventogaleriafotos({evID: this.state.evento[0].evID})}}>
+                        onPress={() => {Actions.eventogaleriafotos({evID: this.state.evento.evID})}}>
                       <Image style={{flex: 1, borderRadius: 10}} 
-                            source={{ uri: this.state.evento[0].eventoFotos[4].photo }}>
+                            source={{ uri: this.state.evento.eventoFotos[4].photo }}>
                             <Text style={{color: 'white', fontWeight: 'bold'}}>GALERIA</Text>
                             <Text style={{color: 'white', fontSize: 8}}>(+10 FOTOS)</Text>
                       </Image>
@@ -197,13 +201,13 @@ export default class CenaEventoDetalhes extends Component {
                 </View>
               </View>
               <View style={styles.descricaoEvento}>
-                <Text style={{color: '#737373', padding: 15}}>{this.state.evento[0].evDescricao}</Text>
+                <Text style={{color: '#737373', padding: 15}}>{this.state.evento.evDescricao}</Text>
               </View>
               <View style={styles.mapa}>
                 <View style={{flex: 1}}>
                   <View style={{flex: 2, paddingTop: 10}}>
-                    <Text style={{textAlign: 'center', color: '#EE2B7A', fontSize: 14}}>{this.state.evento[0].evLocal}</Text>
-                    <Text style={[styles.txtCinzaPequeno,{textAlign: 'center', fontSize: 12}]}>{this.state.evento[0].evEndereco}</Text>
+                    <Text style={{textAlign: 'center', color: '#EE2B7A', fontSize: 14}}>{this.state.evento.evLocal}</Text>
+                    <Text style={[styles.txtCinzaPequeno,{textAlign: 'center', fontSize: 12}]}>{this.state.evento.evEndereco}</Text>
                   </View>
                   <View style={{flex: 6, margin: 10}}>
                     <MapView style={styles.map}
@@ -224,11 +228,11 @@ export default class CenaEventoDetalhes extends Component {
                   </View>
                   <View style={{flex: 6}}>
                     <Text style={[styles.txtCinzaPequeno, {fontSize: 10}]}>Organizado por</Text>
-                    <Text style={{color: 'white'}}>{this.state.evento[0].evOrganizador}</Text>
+                    <Text style={{color: 'white'}}>{this.state.evento.evOrganizador}</Text>
                   </View>
                   <View style={{alignItems: 'center', flex: 1}}>
                      <TouchableHighlight 
-                          onPress={() => {Actions.eventogaleriafotos({evID: this.state.evento[0].evID})}}>
+                          onPress={() => {Actions.eventogaleriafotos({evID: this.state.evento.evID})}}>
                         <Image style={{width: 20, height: 40}} source={imgTemp}>
                         </Image>
                       </TouchableHighlight>

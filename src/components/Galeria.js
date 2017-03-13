@@ -6,24 +6,39 @@ import React, { Component } from 'react';
 import { StyleSheet } from 'react-native';
 
 import PhotoBrowser from 'react-native-photo-browser';
+import {firebaseRef, auth} from '../FirebaseConfig'
 
 export default class Galeria extends Component {
 
   constructor(props) {
     super(props);
 
-    this.state = { evento : this.getEventos().filter((evento) => evento.evID == this.props.evID)};
+    // this.state = { evento : this.getEventos().filter((evento) => evento.evID == this.props.evID)};
+    this.state = { evento : []};
     this.state = { startOnGrid : true};
   }
 
-  getEventos() {
-    return require('../../assets/agendabox-2a212-export.json');
+  listarDados(){
+   var eventos = firebaseRef.child('eventos').child(this.props.evID);
+   eventos.on('value', (snapshot) => { 
+      var evento = snapshot.val();
+      this.setState({ evento : evento});
+      console.log(evento);
+    });
   }
+
+  componentWillMount() {
+    this.listarDados();
+  }
+
+  // getEventos() {
+  //   return require('../../assets/agendabox-2a212-export.json');
+  // }
 
   render() {
     return (
       <PhotoBrowser style={{backgroubdColor: 'blue'}}
-        mediaList={(this.getEventos().filter((evento) => evento.evID == this.props.evID))[0].eventoFotos}
+        mediaList={this.state.evento.eventoFotos}
         startOnGrid={this.state.startOnGrid}
         enableGrid={true}
         displayTopBar={false}
