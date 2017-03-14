@@ -6,6 +6,7 @@ import { Actions } from 'react-native-router-flux';
 import Rodape from './Rodape'
 import Topo from './Topo'
 import Filtro from './Filtro'
+import BotaoLike from './BotaoLike'
 import {firebaseRef, auth} from '../FirebaseConfig'
 
 //import { NavigationBar } from '@shoutem/ui/navigation';
@@ -79,7 +80,7 @@ listarDados(){
                 <Subtitle style={{color: '#737373', fontSize: 12}}>{eventos.evLocal}</Subtitle>
               </View>
               <View style={{ flex : 2, paddingTop: 10}}>
-                <Image source={imgLike} style={{width: 35, height: 30, backgroundColor: '#303030'}}/>
+                <BotaoLike evID={eventos.evID}/>
               </View>
             </Tile>
           <View style={{flexDirection: 'row', borderTopWidth: 0.2, borderColor: 'white', margin: 10}}>
