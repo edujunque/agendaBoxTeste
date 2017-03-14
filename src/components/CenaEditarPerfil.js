@@ -12,7 +12,6 @@ import BotaoDeslogar from './BotaoDeslogar'
 export default class CenaEditarPerfil extends Component {
   constructor(props){
     super(props);
-    
    }
 
   render() {
@@ -24,7 +23,7 @@ export default class CenaEditarPerfil extends Component {
         </View>
         <View style={styles.conteudo}>
           <ScrollView>
-            <View>
+            <View style={styles.viewLogout}>
               <BotaoDeslogar />
             </View>
           </ScrollView>
@@ -39,6 +38,11 @@ export default class CenaEditarPerfil extends Component {
 }
 
 const styles = StyleSheet.create({
+  viewLogout: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginTop: 30,
+  },
   container: {
     flex: 1,
   },
@@ -52,18 +56,14 @@ const styles = StyleSheet.create({
     flex: 10,
     backgroundColor: '#1D1D1D'
   },
-  GeneralInfo: {
-    flex: 6,
-    marginTop: 20
-  },
-   btnCriarConta: {
-  backgroundColor: 'transparent',
-  width: 300,
-  alignItems: 'center',
-  padding: 13,
-  borderRadius: 30,
-  borderWidth: 0.5,
-  borderColor: 'red'
+  btnCriarConta: {
+    backgroundColor: 'transparent',
+    width: 300,
+    alignItems: 'center',
+    padding: 13,
+    borderRadius: 30,
+    borderWidth: 0.5,
+    borderColor: 'red'
 },
   txtCriarConta: {
     color: 'red',

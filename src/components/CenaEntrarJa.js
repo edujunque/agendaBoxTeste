@@ -58,6 +58,7 @@ export default class CenaLogin extends Component {
               <TextInput
              style={styles.formText}
              underlineColorAndroid='rgba(0,0,0,0)'
+              secureTextEntry = {true}
               placeholder="Senha"
               placeholderTextColor='white'
               onChangeText={(pass) => this.setState({pass})}

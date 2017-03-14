@@ -18,47 +18,61 @@ export default class CenaLogin extends Component {
     this.state = {email : ''}
     this.state = {cpf : ''}
     this.state = {pass : ''}
+    this.state = {confPass : ''}
+  }
+
+  passwordValidate(){
+    if (this.state.pass !== this.state.confPass){
+      return false;
+    } else {
+      return true;
+    }
   }
 
   saveUserData(){
-    //console.log(data);
-    var email = this.state.email;
-    var senha = this.state.pass;
-    // console.log(email, '', senha);
-    //var usuario = auth.auth();
-   //Cria usuario na base padrão de autenticação por email do Firebase  (usado para login e afins)
-     auth.createUserWithEmailAndPassword(email, senha).then(() => {
-      // Update successful.
-      //cria usuario na estrutura de relação entre informações da base. (evento X curtidas e evento X Checkin)
-       const usuarioAtual = auth.currentUser;
-       console.log(usuarioAtual.uid);
-       firebaseRef.child('user/'+ usuarioAtual.uid).set({
-          facebookID : '',
-          gender : '',
-          name : this.state.name,
-          linkFB : '',
-          cpf : this.state.cpf
-       });
-       // firebase.database().ref('user/'+ usuarioAtual.uid + '/eventosCheckin').push().set({
-       //    dtCkeckin : String(Date.now),
-       //    evID : '1'
-       // });
-       // firebase.database().ref('user/'+ usuarioAtual.uid + '/eventosCurtidos').push().set({
-       //    evID : '1'
-       // });
-       usuarioAtual.updateProfile({
-        photoURL: ''
-        }).then(function() {
+    if(this.passwordValidate()){
+        //console.log(data);
+        var email = this.state.email;
+        var senha = this.state.pass;
+        // console.log(email, '', senha);
+        //var usuario = auth.auth();
+       //Cria usuario na base padrão de autenticação por email do Firebase  (usado para login e afins)
+         auth.createUserWithEmailAndPassword(email, senha).then(() => {
           // Update successful.
-        }, function(error) {
+          //cria usuario na estrutura de relação entre informações da base. (evento X curtidas e evento X Checkin)
+           const usuarioAtual = auth.currentUser;
+           console.log(usuarioAtual.uid);
+           firebaseRef.child('user/'+ usuarioAtual.uid).set({
+              facebookID : '',
+              gender : '',
+              name : this.state.name,
+              linkFB : '',
+              cpf : this.state.cpf
+           });
+           // firebase.database().ref('user/'+ usuarioAtual.uid + '/eventosCheckin').push().set({
+           //    dtCkeckin : String(Date.now),
+           //    evID : '1'
+           // });
+           // firebase.database().ref('user/'+ usuarioAtual.uid + '/eventosCurtidos').push().set({
+           //    evID : '1'
+           // });
+           usuarioAtual.updateProfile({
+            photoURL: ''
+            }).then(function() {
+              // Update successful.
+            }, function(error) {
+              // An error happened.
+            });
+
+            //Direciona o usuario para a area logada.
+            Actions.timeline();
+          }, function(error) {
           // An error happened.
         });
-
-        //Direciona o usuario para a area logada.
-        Actions.timeline();
-      }, function(error) {
-      // An error happened.
-    });
+    }
+    else {
+      alert('As senhas devem ser iguais!');
+    }
   }
 
  render() {
@@ -108,6 +122,7 @@ export default class CenaLogin extends Component {
               <TextInput
              style={styles.formText}
              underlineColorAndroid='rgba(0,0,0,0)'
+             secureTextEntry = {true}
               placeholder="Senha"
               placeholderTextColor='white'
               onChangeText={(pass) => this.setState({pass})}
@@ -120,9 +135,10 @@ export default class CenaLogin extends Component {
               <TextInput
               style={styles.formText}
               underlineColorAndroid='rgba(0,0,0,0)'
+              secureTextEntry = {true}
               placeholder="Confirme a Senha"
               placeholderTextColor='white'
-              onChangeText={(text) => this.setState({text})}
+              onChangeText={(confPass) => this.setState({confPass})}
             />
             </View>
           </View>
