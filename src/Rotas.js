@@ -8,6 +8,7 @@ import CenaEventoGaleria from './components/CenaEventoGaleria';
 import Galeria from './components/Galeria';
 import CenaLoginFacebook from './components/CenaLoginFacebook';
 import CenaEditarPerfil from './components/CenaEditarPerfil';
+import CenaEntrarJa from './components/CenaEntrarJa';
 
 
 const Rotas = () => (
@@ -19,6 +20,7 @@ const Rotas = () => (
 	    <Scene hideNavBar={true} key='galeria' component={Galeria} title='Galeria' />
 	    <Scene hideNavBar={true} key='CenaLoginFacebook' component={CenaLoginFacebook} title='CenaLoginFacebook' />
 	    <Scene hideNavBar={true} key='editarPerfil' component={CenaEditarPerfil} title='CenaEditarPerfil' />
+	    <Scene hideNavBar={true} key='entrarJa' component={CenaEntrarJa} title='CenaEntrarJa' />
 	    
 	</Router>
 	);

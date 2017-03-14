@@ -4,10 +4,6 @@ import { Actions } from 'react-native-router-flux';
 import LoginFacebook from './CenaLoginFacebook'
 import CriarConta from './CenaCriarConta'
 
-const imgName = require('../imgs/ico-men.png');
-const imgEmail = require('../imgs/ico-mail.png');
-const imgCPF = require('../imgs/ico-cpf.png');
-const imgPassword = require('../imgs/ico-pass.png');
 const imgLogo = require('../imgs/logo.png');
 const imgBackground = require('../imgs/bg.jpg');
 
@@ -29,7 +25,7 @@ export default class CenaLogin extends Component {
         <View style={styles.login}>
         <Text style={{color:'gray', marginBottom: 10, fontSize: 12}}>Já é cadastrado?</Text>
           <TouchableHighlight style={styles.btnLogin}
-              onPress={() => {Actions.timeline(); }}>
+              onPress={() => {Actions.entrarJa(); }}>
               <Text style={styles.txtEntreJa}>ENTRE JÁ</Text>
           </TouchableHighlight>
          

@@ -32,6 +32,7 @@ listarDados(){
 
  componentWillMount() {
    this.listarDados();
+   console.log('timeline:', auth.currentUser.email);
  }
 
   // getEventos() {
