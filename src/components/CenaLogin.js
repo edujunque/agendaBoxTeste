@@ -3,11 +3,26 @@ import { View, Image, Text, StyleSheet, TouchableHighlight, Button, TextInput, S
 import { Actions } from 'react-native-router-flux';
 import LoginFacebook from './CenaLoginFacebook'
 import CriarConta from './CenaCriarConta'
+import {firebaseRef, auth} from '../FirebaseConfig'
 
 const imgLogo = require('../imgs/logo.png');
 const imgBackground = require('../imgs/bg.jpg');
 
 export default class CenaLogin extends Component {
+
+   verificarUsuarioLogado(){
+     const usuarioAtual = auth.currentUser;
+      auth.onAuthStateChanged(
+        (usuarioAtual) => {
+          if( usuarioAtual ){
+            Actions.timeline();
+          } else {
+            Actions.entrarJa();
+          }
+        }
+      );
+  } 
+
  render() {
     return (
       
@@ -25,7 +40,7 @@ export default class CenaLogin extends Component {
         <View style={styles.login}>
         <Text style={{color:'gray', marginBottom: 10, fontSize: 12}}>Já é cadastrado?</Text>
           <TouchableHighlight style={styles.btnLogin}
-              onPress={() => {Actions.entrarJa(); }}>
+              onPress={() => { this.verificarUsuarioLogado() }}>
               <Text style={styles.txtEntreJa}>ENTRE JÁ</Text>
           </TouchableHighlight>
          

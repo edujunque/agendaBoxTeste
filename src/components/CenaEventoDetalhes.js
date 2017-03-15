@@ -25,12 +25,29 @@ export default class CenaEventoDetalhes extends Component {
     
   }
   
+  days_between() {
+    //data evento
+    var date1 = String(this.state.evento.evData);
+    var res = date1.split("/");
+    //Menos 1 pois o Date() começa a contar os meses a partir do zero e não 1
+    date1 = new Date(res[2],res[1] -1,res[0]);
+    
+    //Data atual
+    var date2 = new Date();
+    // The number of milliseconds in one day
+    var ONE_DAY = 1000 * 60 * 60 * 24
+
+    var utc1 = Date.UTC(date1.getFullYear(), date1.getMonth(), date1.getDate());
+    var utc2 = Date.UTC(date2.getFullYear(), date2.getMonth(), date2.getDate());
+    return Math.floor((utc1 - utc2) / ONE_DAY);
+    
+}
+
   listarDados(){
    var eventos = firebaseRef.child('eventos').child(this.props.evID);
    eventos.on('value', (snapshot) => { 
       var evento = snapshot.val();
       this.setState({ evento : evento});
-      console.log(evento);
     });
   }
 
@@ -41,7 +58,9 @@ export default class CenaEventoDetalhes extends Component {
   componentWillMount() {
     this.listarDados();
   }
-
+  componentDidMount() {
+    this.days_between();
+  }
   // defines the UI of each row in the list
   renderRowPrecos(precos) {
     return (
@@ -102,7 +121,7 @@ export default class CenaEventoDetalhes extends Component {
                     <Text style={styles.txtCinzaPequeno}>FALTAM</Text> 
                   </View>
                   <View>
-                    <Text style={{color:'white', fontSize: 30}}>16</Text>
+                    <Text style={{color:'white', fontSize: 30}}>{this.days_between()}</Text>
                   </View>
                   <View>
                     <Text style={{color:'#EE2B7A', fontSize: 12, fontWeight: 'bold'}}>DIAS</Text>
