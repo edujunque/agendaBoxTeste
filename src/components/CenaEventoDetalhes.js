@@ -22,7 +22,7 @@ export default class CenaEventoDetalhes extends Component {
     super(props);
     //this.state = { evento : this.getEventos().filter((evento) => evento.evID == this.props.evID)};
     this.state = { evento : []};
-    
+    this.state = {numEventoFotos : 0};
   }
   
   days_between() {
@@ -47,6 +47,7 @@ export default class CenaEventoDetalhes extends Component {
    var eventos = firebaseRef.child('eventos').child(this.props.evID);
    eventos.on('value', (snapshot) => { 
       var evento = snapshot.val();
+      this.setState({numEventoFotos : snapshot.child("eventoFotos").numChildren()});
       this.setState({ evento : evento});
     });
   }
@@ -143,7 +144,7 @@ export default class CenaEventoDetalhes extends Component {
                     <Image source={imgDefaultPhoto} style={{width: 35, height: 30, backgroundColor: '#1D1D1D'}}/>
                   </View>
                   <View>
-                    <Text style={[styles.txtCinzaPequeno, {fontWeight: 'bold', paddingTop: 5}]}>12</Text>
+                    <Text style={[styles.txtCinzaPequeno, {fontWeight: 'bold', paddingTop: 5}]}>{this.state.numEventoFotos}</Text>
                   </View>
                   <View>
                     <Text style={[styles.txtCinzaPequeno,]}>FOTOS</Text>
