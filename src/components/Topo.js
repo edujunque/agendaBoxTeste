@@ -38,7 +38,10 @@ export default class Topo extends Component {
             </View>
             <View style={{flex: 2}}>
               <TouchableHighlight 
-                onPress={() => {Actions.editarPerfil()}}>
+                onPress={() => {Actions.editarPerfil()}}
+                underlayColor={'#303030'}
+                activeOpacity={0.5}
+              >
                  <Image source={{uri : this.ReturnURL()}} style={{width: 40, height: 40, borderRadius: 30, backgroundColor: '#303030'}}/>
               </TouchableHighlight>
               

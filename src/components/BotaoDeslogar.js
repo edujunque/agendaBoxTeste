@@ -45,7 +45,10 @@ export default class botaoDeslogar extends Component {
       return (
         <View>
            <TouchableHighlight style={styles.btnCriarConta}
-              onPress={() => {this.deslogarUsuario(); }}>
+              onPress={() => {this.deslogarUsuario(); }}
+              underlayColor={'#303030'}
+              activeOpacity={0.5}
+              >
               <Text style={styles.txtCriarConta}>SAIR</Text>
            </TouchableHighlight>
         </View>

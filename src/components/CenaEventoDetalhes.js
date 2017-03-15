@@ -10,7 +10,6 @@ import MapView from 'react-native-maps';
 import Rodape from './Rodape'
 import Topo from './Topo'
 import Filtro from './Filtro'
-import BotaoShare from './BotaoShare'
 
 //import { NavigationBar } from '@shoutem/ui/navigation';
 const imgLogo = require('../imgs/logo.png');
