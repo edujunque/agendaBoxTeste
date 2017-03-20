@@ -12,8 +12,8 @@ import {firebaseRef, auth} from '../FirebaseConfig'
 //import { NavigationBar } from '@shoutem/ui/navigation';
 const imgLogo = require('../imgs/logo.png');
 const imgLike = require('../imgs/ico_like.png');
-const imgTemp = require('../imgs/olocobicho.jpg');
-
+const imgTemp = require('../imgs/NoPhoto_icon-user-default.jpg');
+const showBuyBtn = false;
 
 export default class CenaTimeLine extends Component {
  
@@ -35,6 +35,19 @@ listarDados(){
    this.listarDados();
  }
 
+ returnBuyBtn(blnShow){
+
+    if(blnShow){
+        return (
+         <TouchableHighlight style={styles.btnComprar}
+            onPress={() => {Actions.timeline(); }}>
+            <Text style={styles.txtComprar}>COMPRAR</Text>
+         </TouchableHighlight>
+      );             
+    }
+  
+ }
+
   // getEventos() {
   //   return require('../../assets/agendabox-2a212-export.json');
   // }
@@ -46,7 +59,7 @@ listarDados(){
       <View style={{backgroundColor: '#303030', marginBottom: 20}}>
         <View style={{flexDirection:'row', margin: 5, }}>
           <View style={{flex: 0.7, }}>
-            <Image source={imgTemp} style={{width: 40, height: 40, borderRadius: 30, backgroundColor: '#303030'}}/>
+            <Image source={imgTemp} style={{width: 40, height: 40, borderRadius: 30, backgroundColor: '#303030', resizeMode: 'cover'}}/>
           </View>
           <View style={{flex: 3}}>
             <Text style={{color: 'white'}}>{eventos.evOrganizador}</Text>
@@ -54,7 +67,10 @@ listarDados(){
           </View>
         <View style={{alignItems: 'flex-end', flex: 1}}>
           <TouchableHighlight style={styles.btnRodape}
-              onPress={() => {Actions.timeline(); }}>
+              onPress={() => {Actions.timeline(); }}
+              underlayColor={'#303030'}
+              activeOpacity={0.5}
+              >
               <Text style={{fontSize: 14, color: 'white', fontWeight: 'bold'}}>...</Text>
           </TouchableHighlight>
         </View>
@@ -90,10 +106,7 @@ listarDados(){
               <Text style={{color:'white', paddingTop: 5}}>R$ {eventos.eventoPrecos[2].Valor}</Text>
             </View>
             <View style={{flex: 2, alignItems: 'flex-end'}}>
-               <TouchableHighlight style={styles.btnComprar}
-                onPress={() => {Actions.timeline(); }}>
-                <Text style={styles.txtComprar}>COMPRAR</Text>
-                </TouchableHighlight>
+                {this.returnBuyBtn(showBuyBtn)}
             </View>
           </View>
         </View>
@@ -151,7 +164,7 @@ const styles = StyleSheet.create({
   alignItems: 'center',
   padding: 7,
   borderRadius: 30,
-  marginTop: 10
+  marginTop: 10,
 },
   txtComprar: {
     color: 'white',

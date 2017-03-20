@@ -40,7 +40,10 @@ export default class CenaLogin extends Component {
         <View style={styles.login}>
         <Text style={{color:'gray', marginBottom: 10, fontSize: 12}}>Já é cadastrado?</Text>
           <TouchableHighlight style={styles.btnLogin}
-              onPress={() => { this.verificarUsuarioLogado() }}>
+              onPress={() => { this.verificarUsuarioLogado() }}
+              underlayColor={'#1a1a1a'}
+              activeOpacity={0.5}
+              >
               <Text style={styles.txtEntreJa}>ENTRE JÁ</Text>
           </TouchableHighlight>
          

@@ -13,12 +13,15 @@ import Filtro from './Filtro'
 
 //import { NavigationBar } from '@shoutem/ui/navigation';
 const imgLogo = require('../imgs/logo.png');
-const imgTemp = require('../imgs/olocobicho.jpg');
+const imgTemp = require('../imgs/NoPhoto_icon-user-default.jpg');
 const imgLike = require('../imgs/ico_like.png');
 const imgDefaultPhoto = require('../imgs/ico_photo.png');
 const imgDefaultShare = require('../imgs/ico_share.png');
 const imgMen = require('../imgs/men-grey.png');
 const imgWomen = require('../imgs/woman-grey.png');
+const imgGo = require('../imgs/bt_go.png');
+const showBuyBtn = false;
+
 //  twitter icon
 const TWITTER_ICON = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8CAMAAAANIilAAAABvFBMVEUAAAAA//8AnuwAnOsAneoAm+oAm+oAm+oAm+oAm+kAnuwAmf8An+0AqtUAku0AnesAm+oAm+oAnesAqv8An+oAnuoAneoAnOkAmOoAm+oAm+oAn98AnOoAm+oAm+oAmuoAm+oAmekAnOsAm+sAmeYAnusAm+oAnOoAme0AnOoAnesAp+0Av/8Am+oAm+sAmuoAn+oAm+oAnOoAgP8Am+sAm+oAmuoAm+oAmusAmucAnOwAm+oAmusAm+oAm+oAm+kAmusAougAnOsAmukAn+wAm+sAnesAmeoAnekAmewAm+oAnOkAl+cAm+oAm+oAmukAn+sAmukAn+0Am+oAmOoAmesAm+oAm+oAm+kAme4AmesAm+oAjuMAmusAmuwAm+kAm+oAmuoAsesAm+0Am+oAneoAm+wAmusAm+oAm+oAm+gAnewAm+oAle0Am+oAm+oAmeYAmeoAmukAoOcAmuoAm+oAm+wAmuoAneoAnOkAgP8Am+oAm+oAn+8An+wAmusAnuwAs+YAmegAm+oAm+oAm+oAmuwAm+oAm+kAnesAmuoAmukAm+sAnukAnusAm+oAmuoAnOsAmukAqv9m+G5fAAAAlHRSTlMAAUSj3/v625IuNwVVBg6Z//J1Axhft5ol9ZEIrP7P8eIjZJcKdOU+RoO0HQTjtblK3VUCM/dg/a8rXesm9vSkTAtnaJ/gom5GKGNdINz4U1hRRdc+gPDm+R5L0wnQnUXzVg04uoVSW6HuIZGFHd7WFDxHK7P8eIbFsQRhrhBQtJAKN0prnKLvjBowjn8igenQfkQGdD8A7wAAAXRJREFUSMdjYBgFo2AUDCXAyMTMwsrGzsEJ5nBx41HKw4smwMfPKgAGgkLCIqJi4nj0SkhKoRotLSMAA7Jy8gIKing0KwkIKKsgC6gKIAM1dREN3Jo1gSq0tBF8HV1kvax6+moG+DULGBoZw/gmAqjA1Ay/s4HA3MISyrdC1WtthC9ebGwhquzsHRxBfCdUzc74Y9UFrtDVzd3D0wtVszd+zT6+KKr9UDX749UbEBgULIAbhODVHCoQFo5bb0QkXs1RAvhAtDFezTGx+DTHEchD8Ql4NCcSyoGJYTj1siQRzL/JKeY4NKcSzvxp6RmSWPVmZhHWnI3L1TlEFDu5edj15hcQU2gVqmHTa1pEXJFXXFKKqbmM2ALTuLC8Ak1vZRXRxa1xtS6q3ppaYrXG1NWjai1taCRCG6dJU3NLqy+ak10DGImx07LNFCOk2js6iXVyVzcLai7s6SWlbnIs6rOIbi8ViOifIDNx0uTRynoUjIIRAgALIFStaR5YjgAAAABJRU5ErkJggg==";
 //  facebook icon
@@ -90,6 +93,20 @@ export default class CenaEventoDetalhes extends Component {
   componentDidMount() {
     this.days_between();
   }
+
+   returnBuyBtn(blnShow){
+
+    if(blnShow){
+        return (
+         <TouchableHighlight style={styles.btnComprar}
+            onPress={() => {Actions.timeline(); }}>
+            <Text style={styles.txtComprar}>COMPRAR</Text>
+         </TouchableHighlight>
+      );             
+    }
+  
+ }
+
   // defines the UI of each row in the list
   renderRowPrecos(precos) {
     return (
@@ -224,10 +241,7 @@ export default class CenaEventoDetalhes extends Component {
                       />
                     </View>
                     <View style={{flex: 2, alignItems: 'center', justifyContent: 'center'}}>
-                      <TouchableHighlight style={styles.btnComprar}
-                      onPress={() => {Actions.timeline(); }}>
-                      <Text style={styles.txtComprar}>COMPRAR</Text>
-                      </TouchableHighlight>
+                      {this.returnBuyBtn(showBuyBtn)}
                     </View>
                 </View>
               </View>
@@ -290,7 +304,7 @@ export default class CenaEventoDetalhes extends Component {
                   <View style={{alignItems: 'center', flex: 1}}>
                      <TouchableHighlight 
                           onPress={() => {Actions.eventogaleriafotos({evID: this.state.evento.evID})}}>
-                        <Image style={{width: 20, height: 40}} source={imgTemp}>
+                        <Image style={{width: 15, height: 23, backgroundColor: '#303030'}} source={imgGo}>
                         </Image>
                       </TouchableHighlight>
                   </View>

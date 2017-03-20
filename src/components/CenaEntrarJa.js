@@ -68,7 +68,10 @@ export default class CenaLogin extends Component {
           </View>
           <View>
             <TouchableHighlight style={styles.btnCriarConta}
-                onPress={() => {this.logIn(); }}>
+                onPress={() => {this.logIn(); }}
+                underlayColor={'#bd0f55'}
+                activeOpacity={0.5}
+                >
                 <Text style={styles.txtCriarConta}>ENTRAR</Text>
             </TouchableHighlight>
           </View>

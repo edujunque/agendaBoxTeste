@@ -65,7 +65,7 @@ const styles = StyleSheet.create({
   alignItems: 'center',
   padding: 13,
   borderRadius: 30,
-  borderWidth: 0.5,
+  borderWidth: 1,
   borderColor: 'red'
 },
   txtCriarConta: {

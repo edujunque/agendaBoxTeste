@@ -76,7 +76,10 @@ export default class botaoLike extends Component {
       return (
         <View>
           <TouchableHighlight 
-             onPress={() => {this.actionLikeBtn()}}>
+             onPress={() => {this.actionLikeBtn()}}
+             underlayColor={'#303030'}
+             activeOpacity={0.5}
+             >
              <Image source={imgLiked} style={{width: 35, height: 30, backgroundColor: '#303030'}}/>
           </TouchableHighlight>
         </View>
@@ -85,7 +88,10 @@ export default class botaoLike extends Component {
       return (
         <View>
           <TouchableHighlight 
-             onPress={() => {this.actionLikeBtn()}}>
+             onPress={() => {this.actionLikeBtn()}}
+             underlayColor={'#303030'}
+             activeOpacity={0.5}
+             >
              <Image source={imgLike} style={{width: 35, height: 30, backgroundColor: '#303030'}}/>
           </TouchableHighlight>        
         </View>

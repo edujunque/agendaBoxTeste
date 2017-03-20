@@ -144,7 +144,10 @@ export default class CenaLogin extends Component {
           </View>
           <View>
             <TouchableHighlight style={styles.btnCriarConta}
-                onPress={() => {this.saveUserData(); }}>
+                onPress={() => {this.saveUserData(); }}
+                underlayColor={'#bd0f55'}
+                activeOpacity={0.5}
+                >
                 <Text style={styles.txtCriarConta}>CRIAR CONTA</Text>
             </TouchableHighlight>
           </View>
