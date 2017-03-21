@@ -1,10 +1,10 @@
 import firebase from 'firebase';
 var firebaseConfig = {
-	  apiKey: "AIzaSyDTUmYoLXinZWDne_4PFMCZpfxWGmShc3E",
-      authDomain: "agendabox-2a212.firebaseapp.com",
-      databaseURL: "https://agendabox-2a212.firebaseio.com",
-      storageBucket: "agendabox-2a212.appspot.com",
-      messagingSenderId: "21027443270"
+ 	apiKey: "AIzaSyAW6jwB5S1Frpxk8uinDlqfcxocGazaQTo",
+    authDomain: "agendabox-72bc2.firebaseapp.com",
+    databaseURL: "https://agendabox-72bc2.firebaseio.com",
+    storageBucket: "agendabox-72bc2.appspot.com",
+    messagingSenderId: "208881071830"
 };
 
 firebase.initializeApp(firebaseConfig);

@@ -44,9 +44,14 @@ export default class CenaEventoDetalhes extends Component {
     //this.state = { evento : this.getEventos().filter((evento) => evento.evID == this.props.evID)};
     this.state = { evento : []};
     this.state = {numEventoFotos : 0};
-    this.state = {visible: false}
+    this.state = {visible: false};
+    this.state = { coordinate: {
+	      latitude: -122.6548,
+	      longitude: -35.6548,
+	    }
+	  };
   }
-  
+
   onCancel() {
     console.log("CANCEL")
     this.setState({visible:false});
@@ -80,7 +85,13 @@ export default class CenaEventoDetalhes extends Component {
       var evento = snapshot.val();
       this.setState({numEventoFotos : snapshot.child("eventoFotos").numChildren()});
       this.setState({ evento : evento});
+   	  this.setState({ coordinate: {
+	      latitude: evento.lat,
+	      longitude: evento.lng,
+	    }
+	  });
     });
+
   }
 
   // getEventos() {
@@ -282,13 +293,19 @@ export default class CenaEventoDetalhes extends Component {
                   </View>
                   <View style={{flex: 6, margin: 10}}>
                     <MapView style={styles.map}
-                      initialRegion={{
-                          latitude: 37.78825,
-                          longitude: -122.4324,
-                          latitudeDelta: 0.0922,
-                          longitudeDelta: 0.0421,
-                        }}
-                    />  
+                         initialRegion={{
+					      latitude: this.state.coordinate.latitude,
+					      longitude: this.state.coordinate.longitude,
+					      latitudeDelta: 0.0922,
+					      longitudeDelta: 0.0421,
+					    }}
+                    >
+                    	<MapView.Marker
+					      coordinate={this.state.coordinate}
+					      title={"marker.title"}
+					      description={"marker.description"}
+					    />
+					</MapView>  
                   </View>
                 </View>
               </View>

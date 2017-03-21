@@ -18,24 +18,24 @@ export default class botaoLike extends Component {
       var refData = firebaseRef.child('user/'+ usuarioAtual.uid);
       refData.on('value',(snapshot) => {
         if (snapshot.child('/eventosCurtidos' + '/evID/' + this.props.evID).exists()){
-          console.log('existe o nó:');
+          // console.log('existe o nó:');
           var evLiked = snapshot.child('/eventosCurtidos' + '/evID/' + this.props.evID).val();
           //Se o nó existe é ´porque o usuario já deu like nesse evento
           //Verifica qual é o estado atual do like
-          console.log(evLiked.liked);
+          // console.log(evLiked.liked);
           if(evLiked.liked){
             this.setState({liked: true});
-            console.log('existe o nó: setou estado true');
+            // console.log('existe o nó: setou estado true');
           }
           else{
             this.setState({liked: false});
-            console.log('existe o nó: setou estado false');
+            // console.log('existe o nó: setou estado false');
           }
           
         }
         else{
           this.setState({liked: false});
-          console.log('nao existe o nó: setou estado false');
+          // console.log('nao existe o nó: setou estado false');
         }
       }); 
    }

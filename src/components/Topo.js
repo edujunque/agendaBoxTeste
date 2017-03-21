@@ -30,7 +30,7 @@ export default class Topo extends Component {
   }
 
     render() {
-        console.log(this.ReturnURL());
+        // console.log(this.ReturnURL());
         return (
           <View style={styles.topo}>
             <View style={{flex: 10, alignItems: 'center', marginLeft: 30}}>
