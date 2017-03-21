@@ -48,13 +48,30 @@ listarDados(){
   
  }
 
+ returnDay(date){
+    var res = String(date).split("/");
+    var date1 = new Date(res[2],res[1],res[0]);
+    return date1.getDate();
+ }
+
+ returnMonth(date){
+    var monthNames = ["JAN", "FEV", "MAR", "ABR", "MAIO", "JUN",
+    "JUL", "AGO", "SET", "OUT", "NOV", "DEZ", ""];
+    var res = String(date).split("/");
+    return monthNames[res[1] -1];
+ }
+
+ returnYear(date){
+    var res = String(date).split("/");
+    return String(res[2]).toString().substr(2,2);
+ }
+
   // getEventos() {
   //   return require('../../assets/agendabox-2a212-export.json');
   // }
 
   // defines the UI of each row in the list
   renderRow(eventos) {
-    
     return (
       <View style={{backgroundColor: '#303030', marginBottom: 20}}>
         <View style={{flexDirection:'row', margin: 5, }}>
@@ -85,9 +102,9 @@ listarDados(){
           
             <Tile style={{backgroundColor: '#303030', flexDirection: 'row'}}>
               <View style={{alignItems: 'center', justifyContent: 'center', flex : 2, paddingTop: 5}}>
-                <Text style={{fontSize: 26, color:'#737373', fontWeight: 'bold'}}>20</Text>
-                <Text style={{fontSize: 9, color:'#737373', fontWeight: 'bold'}}>MAR/
-                  <Text style={{fontSize: 9, color:'#737373', fontWeight: 'normal'}}>17</Text>
+                <Text style={{fontSize: 26, color:'#737373', fontWeight: 'bold'}}>{this.returnDay(eventos.evData)}</Text>
+                <Text style={{fontSize: 9, color:'#737373', fontWeight: 'bold'}}>{this.returnMonth(eventos.evData)}/
+                  <Text style={{fontSize: 9, color:'#737373', fontWeight: 'normal'}}>{this.returnYear(eventos.evData)}</Text>
                 </Text>
               </View>
               <View style={{ flex : 10, paddingTop: 3}}>
