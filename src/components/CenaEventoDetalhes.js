@@ -434,7 +434,7 @@ const styles = StyleSheet.create({
  },
  imagemBanner: {
   flex: 6,
-  backgroundColor: 'pink'
+  // backgroundColor: 'pink'
  },
  nomeEvento: {
   alignItems: 'center',
